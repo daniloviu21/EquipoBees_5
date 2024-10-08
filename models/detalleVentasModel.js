@@ -1,5 +1,5 @@
 const pool = require('../config/db');
-const Producto = require('../controllers/productosController');
+const Producto = require('../models/productosModel');
 
 class DetalleVentas {
     static async create(IdVenta, IdProducto, cantidad) {
