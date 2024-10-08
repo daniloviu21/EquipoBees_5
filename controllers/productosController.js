@@ -50,7 +50,7 @@ class ProductosController {
         return result.rows[0];
     }
 
-    static async updateStock(){
+    static async updateStock(stock, id){
         const result = await pool.query('UPDATE productos SET stock = $1, updated_at = now() WHERE id = $2 RETURNING *',[stock, id]);
         return result.rows[0];
     }
