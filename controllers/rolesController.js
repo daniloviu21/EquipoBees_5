@@ -5,7 +5,7 @@ class RolesController {
     static async getAllRoles(req, res)
     {
         try {
-            const rol = await Rol.obtenerProductos();
+            const rol = await Rol.getAllRoles();
             res.json(rol);
         } catch (e) {
             res.status(500).json({error: e.message});
