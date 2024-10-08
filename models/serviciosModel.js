@@ -15,7 +15,7 @@ class Servicios {
 
     static async update(id, data){
         const {nombreServicio, descripcion, precio} = data;
-        const result = await pool.query('UPDATE servicios SET nombreServicio = $1, descripcion = $2, precio = $3, updated_at = now() WHERE id = $5 and deleted_at is null RETURNING *', [nombreServicio, descripcion, precio, id]);
+        const result = await pool.query('UPDATE servicios SET nombreServicio = $1, descripcion = $2, precio = $3, updated_at = now() WHERE id = $4 and deleted_at is null RETURNING *', [nombreServicio, descripcion, precio, id]);
         return result.rows[0];
     }
 
