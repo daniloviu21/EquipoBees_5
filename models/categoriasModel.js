@@ -15,7 +15,7 @@ class Categorias {
 
     static async update(id, data){
         const {nombreCategoria,descripcion} = data;
-        const result = await pool.query('UPDATE categorias SET nombreCategoria,descripcion = $1, updated_at = now() WHERE id = $2 and deleted_at is null RETURNING *', [nombreCategoria,descripcion, id]);
+        const result = await pool.query('UPDATE categorias SET nombreCategoria = $1, descripcion = $2, updated_at = now() WHERE id = $3 and deleted_at is null RETURNING *', [nombreCategoria, descripcion, id]);
         return result.rows[0];
     }
 
