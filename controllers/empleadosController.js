@@ -50,19 +50,24 @@ class EmpleadosController {
     }
 
     static async deleteEmployeeAndUser(req, res) {
-        const { idEmpleado } = req.params;
+        const { id } = req.params; 
         try {
-            const empleado = await Empleados.findById(idEmpleado);
+            const empleado = await Empleados.findById(id);
             if (!empleado) {
                 return res.status(404).json({ message: "Empleado no encontrado!" });
             }
-            await Usuarios.delete(empleado.idUsuario); 
-            await Empleados.delete(idEmpleado); 
+            const usuarioId = empleado.idusuario;  
+            const usuarioEliminado = await Usuarios.delete(usuarioId);
+            if (!usuarioEliminado) {
+                return res.status(404).json({ message: "Usuario no encontrado!" });
+            }
+            await Empleados.delete(id); 
             return res.json({ message: "Empleado y usuario eliminados!" });
         } catch (e) {
             res.status(500).json({ error: e.message });
         }
     }
+    
 }
 
 module.exports = EmpleadosController;
