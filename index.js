@@ -7,6 +7,7 @@ const rolesRoutes = require('./routes/rolesRoutes');
 const departamentosRoutes = require('./routes/departamentosRoutes');
 const categoriasRoutes = require('./routes/categoriasRoutes');
 const marcasRoutes = require('./routes/marcasRoutes');
+const clientesRoutes = require('./routes/clientesRoutes');
 require('dotenv').config();
 
 const app = express();
@@ -20,6 +21,7 @@ app.use('/api',rolesRoutes);
 app.use('/api',departamentosRoutes);
 app.use('/api',categoriasRoutes);
 app.use('/api',marcasRoutes);
+app.use('/api',clientesRoutes)
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () =>{
