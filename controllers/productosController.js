@@ -48,7 +48,7 @@ class ProductosController {
 
     static async getProductById(req, res) {
         try {
-            const producto = await Productos.findById(req.params.id);
+            const producto = await Productos.getProductId(req.params.id);
             if (!producto) {
                 return res.status(404).json({ message: "Producto no encontrado!" });
             }
