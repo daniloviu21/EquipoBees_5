@@ -49,16 +49,19 @@ class ClientesController {
         }
     }
     
-
     static async deleteClientAndUser(req, res) {
-        const { idCliente } = req.params;
+        const { id } = req.params; 
         try {
-            const cliente = await Clientes.findById(idCliente);
+            const cliente = await Clientes.findById(id);
             if (!cliente) {
                 return res.status(404).json({ message: "Cliente no encontrado!" });
             }
-            await Usuarios.delete(cliente.idUsuario); 
-            await Clientes.delete(idCliente); 
+            const usuarioId = cliente.idusuario; 
+            const usuarioEliminado = await Usuarios.delete(usuarioId);
+            if (!usuarioEliminado) {
+                return res.status(404).json({ message: "Usuario no encontrado!" });
+            }
+            await Clientes.delete(id);
             return res.json({ message: "Cliente y usuario eliminados!" });
         } catch (e) {
             res.status(500).json({ error: e.message });
