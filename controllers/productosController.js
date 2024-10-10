@@ -1,3 +1,4 @@
+const Productos = require('../models/productosModel');
 const Producto = require('../models/productosModel');
 
 class ProductosController {
@@ -42,6 +43,18 @@ class ProductosController {
             return res.json({message: "Producto eliminado!"});
         } catch (e) {
             res.status(500).json({error: e.message});
+        }
+    }
+
+    static async getProductById(req, res) {
+        try {
+            const producto = await Productos.findById(req.params.id);
+            if (!producto) {
+                return res.status(404).json({ message: "Producto no encontrado!" });
+            }
+            return res.json(producto);
+        } catch (e) {
+            res.status(500).json({ error: e.message });
         }
     }
 
