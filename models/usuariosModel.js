@@ -6,9 +6,9 @@ class Usuarios {
         return result.rows;
     }
 
-    static async create(data){
-        const {usuario, contrasenia} = data;
-        const result = await pool.query('INSERT INTO usuarios (usuario, contrasenia) VALUES ($1, PGP_SYM_ENCRYPT($2::text,$3::text)) RETURNING *',[usuario, contrasenia, 'AES_KEY']);
+    static async create(data) {
+        const { usuario, contrasenia, idRol } = data;
+        const result = await pool.query('INSERT INTO usuarios (usuario, contrasenia, idRol) VALUES ($1, PGP_SYM_ENCRYPT($2::text, $3::text), $4) RETURNING *',[usuario, contrasenia, 'AES_KEY', idRol]);
         return result.rows[0];
     }
 
@@ -18,11 +18,8 @@ class Usuarios {
     }
 
     static async update(id, data) {
-        const {usuario, contrasenia} = data;
-        const result = await pool.query(
-            `UPDATE usuarios SET usuario = $1, contrasenia = PGP_SYM_ENCRYPT($2, 'AES_KEY'), updated_at = now() WHERE id = $3 AND deleted_at IS NULL RETURNING *`,
-            [usuario, contrasenia, id]
-        );
+        const { usuario, contrasenia, idRol } = data;
+        const result = await pool.query(`UPDATE usuarios SET usuario = $1,contrasenia = PGP_SYM_ENCRYPT($2, 'AES_KEY'), idRol = $3, updated_at = now() WHERE id = $4 AND deleted_at IS NULL RETURNING *`,[usuario, contrasenia, idRol, id]);
         return result.rows[0];
     }
 
