@@ -52,11 +52,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.get('/login', (req, res, next) => {
+  console.log("Iniciando sesión...");
   passport.authenticate('auth0', {
     scope: 'openid email profile'
   })(req, res, next);
 }, (req, res) => {
-  res.json({ message: 'Iniciando sesión, por favor verifica tu navegador.' });
+  res.json({ message: 'Iniciando sesión...' });
 });
 
 app.get('/callback', passport.authenticate('auth0', {
