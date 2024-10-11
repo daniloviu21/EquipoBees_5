@@ -25,7 +25,7 @@ class ServiciosController {
         try {
             const servicio = await Servicio.update(req.params.id, req.body);
             if (!servicio) {
-                return res.status(404).json({message: "Servicio no encontrado!"});
+                return res.status(404).json({message: "!Servicio no encontrado!"});
             }
             return res.json(servicio);
         } catch (e) {
