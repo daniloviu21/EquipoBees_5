@@ -24,7 +24,7 @@ class UsuariosController {
         try {
             const usuarios = await Usuario.findById(req.params.id);
             if (!usuarios) {
-                return res.status(404).json({message: "Usuario no encontrado!"});
+                return res.status(404).json({message: "!Usuario no encontrado!"});
             }
             return res.json(usuarios);
         } catch (e) {
