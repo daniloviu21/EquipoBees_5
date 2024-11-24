@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:title="Inicio"
+            />
+        <item
+            android:id="@+id/nav_coti"
+            android:title="Cotización"
+            />
+        <item
+            android:id="@+id/nav_orders"
+            android:title="Pedidos"
+            />
+        <item
+            android:id="@+id/nav_history"
+            android:title="Historial de pedidos"
+            />
+        <item
+            android:id="@+id/nav_noti"
+            android:title="Notificaciones" />
+        <!--
+        <item
+            android:id="@+id/nav_client"
+            android:title="Clientes" />
+        <item
+            android:id="@+id/nav_add_client"
+            android:title="Añadir cliente" />
+        -->
+    </group>
+</menu>

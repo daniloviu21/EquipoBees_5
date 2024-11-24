@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#f0f0f0">
+
+        <!-- Título de la sección -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anuncios"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:textColor="#000000"/>
+
+        <!-- Imagen central -->
+        <ImageView
+            android:id="@+id/mainImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/anuncios"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            android:background="#FFC107"
+            android:padding="6dp"/>
+
+        <!-- TextView debajo de la imagen -->
+
+        <!-- Contenedores para especificaciones, medidas y comentarios -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#d3d3d3"
+            android:padding="8dp"
+            android:layout_marginTop="16dp">
+
+            <!-- Especificaciones -->
+            <TextView
+                android:id="@+id/labelEspecificaciones"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Especificaciones:"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp"/>
+
+            <EditText
+                android:id="@+id/especificacionesInput"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginBottom="16dp"
+                android:background="#eaf2ff"
+                android:hint="Ingrese las especificaciones"
+                android:padding="8dp"
+                android:textSize="14dp"
+                android:contentDescription="Campo para ingresar especificaciones"/>
+
+            <!-- Medidas -->
+            <TextView
+                android:id="@+id/labelMedidas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medidas:"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp"/>
+
+            <EditText
+                android:id="@+id/medidasInput"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginBottom="16dp"
+                android:background="#eaf2ff"
+                android:hint="Ingrese las medidas"
+                android:padding="8dp"
+                android:textSize="14dp"
+                android:contentDescription="Campo para ingresar medidas"/>
+
+            <!-- Comentarios -->
+            <TextView
+                android:id="@+id/labelComentarios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Comentarios:"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp"/>
+
+            <EditText
+                android:id="@+id/comentariosInput"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginBottom="16dp"
+                android:background="#eaf2ff"
+                android:hint="Ingrese comentarios adicionales"
+                android:padding="8dp"
+                android:textSize="14dp"
+                android:contentDescription="Campo para ingresar comentarios adicionales"/>
+        </LinearLayout>
+
+        <!-- Botón Realizar pedido -->
+        <Button
+            android:id="@+id/realizarPedidoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Realizar pedido"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="#ffc107"
+            android:textColor="#000000"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

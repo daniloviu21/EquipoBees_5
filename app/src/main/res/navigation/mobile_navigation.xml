@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.ultimo.ui.home.Home"
+        android:label="Inicio"
+        tools:layout="@layout/activity_home" />
+    <fragment
+        android:id="@+id/nav_coti"
+        android:name="com.example.ultimo.ui.coti.Coti"
+        android:label="Cotización"
+        tools:layout="@layout/activity_coti" />
+    <fragment
+        android:id="@+id/nav_noti"
+        android:name="com.example.ultimo.ui.noti.Noti"
+        android:label="Notificaciones"
+        tools:layout="@layout/activity_noti" />
+    <fragment
+        android:id="@+id/nav_orders"
+        android:name="com.example.ultimo.ui.orders.Orders"
+        android:label="Pedidos"
+        tools:layout="@layout/activity_orders" />
+    <fragment
+        android:id="@+id/nav_history"
+        android:name="com.example.ultimo.ui.history.History"
+        android:label="Historial de pedidos"
+        tools:layout="@layout/activity_history" />
+
+
+
+    <!--
+    <fragment
+        android:id="@+id/nav_add_client"
+        android:name="com.example.ultimo.ui.add_client.AddClient"
+        android:label="Añadir cliente"
+        tools:layout="@layout/activity_add_client" />
+
+    <fragment
+        android:id="@+id/nav_client"
+        android:name="com.example.ultimo.ui.client.Client"
+        android:label="Clientes"
+        tools:layout="@layout/activity_clients" />
+        -->
+</navigation>

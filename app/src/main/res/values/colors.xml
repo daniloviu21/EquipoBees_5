@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores principales -->
+    <color name="colorPrimary">#1D2535</color> <!-- Negro para la barra superior -->
+    <color name="colorPrimaryDark">#090c15</color> <!-- Negro para la barra superior -->
+    <color name="colorAccent">#ffc107</color> <!-- Amarillo para los botones -->
+
+    <color name="purple_200">#1D2535</color>
+    <color name="purple_500">#1D2535</color>
+    <color name="purple_700">#1D2535</color>
+    <color name="teal_200">#A2A4A4</color>
+    <color name="teal_700">#A2A4A4</color>
+
+    <color name="gray1">#A2A4A4</color>
+    <color name="color1">#090c15</color>
+
+
+    <!-- Colores personalizados para el diseño -->
+    <color name="white">#dbe2e7</color> <!-- Blanco para el fondo general -->
+    <color name="yellow">#FFC107</color> <!-- Amarillo para los botones (más cálido) -->
+    <color name="gray">#A2A4A4</color> <!-- Gris claro para el fondo de la tarjeta -->
+    <color name="black">#1a1a1a</color> <!-- Negro para los textos o fondos oscuros -->
+    <color name="grey">#3A3A3C</color> <!-- Gris oscuro para los textos -->
+</resources>

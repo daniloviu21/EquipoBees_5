@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@color/white"
+        tools:context=".MainActivity">
+
+        <!-- Encabezado con logo y menú -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="8dp"
+            android:background="#121317">
+
+            <!-- Logo a la izquierda -->
+            <ImageView
+                android:id="@+id/logoImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/vanguard"
+                android:contentDescription="@string/app_name" />
+
+            <!-- Título -->
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vanguard"
+                android:textSize="24sp"
+                android:textColor="#ffffff"
+                android:layout_marginStart="16dp" />
+
+
+        </LinearLayout>
+
+        <!-- Título de la sección -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estructura"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:textColor="#000000"/>
+
+        <!-- Imagen central -->
+        <ImageView
+            android:id="@+id/mainImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/estructuras"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            android:background="#FFC107"
+            android:padding="6dp" />
+
+        <!-- TextView debajo de la imagen -->
+        <TextView
+            android:id="@+id/imageLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estructuras"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#0073e6"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Contenedores para especificaciones, medidas y comentarios -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#d3d3d3"
+            android:padding="8dp"
+            android:layout_marginTop="16dp">
+
+            <!-- Especificaciones -->
+            <EditText
+                android:id="@+id/especificacionesInput"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginBottom="8dp"
+                android:background="#eaf2ff"
+                android:hint="Especificaciones"
+                android:textSize="14sp"
+                android:padding="8dp" />
+
+            <!-- Medidas -->
+            <EditText
+                android:id="@+id/medidasInput"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginBottom="8dp"
+                android:background="#eaf2ff"
+                android:hint="Medidas"
+                android:textSize="14sp"
+                android:padding="8dp" />
+
+            <!-- Comentarios -->
+            <EditText
+                android:id="@+id/comentariosInput"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:background="#eaf2ff"
+                android:hint="Comentarios"
+                android:textSize="14sp"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- Botón Realizar pedido -->
+        <Button
+            android:id="@+id/realizarPedidoButton"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:text="Realizar pedido"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
